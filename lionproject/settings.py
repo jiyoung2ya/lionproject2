@@ -142,13 +142,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #AWS
-
 AWS_ACCESS_KEY_ID = os.environ.get('AKIA4EUQ4PAMDYTROW6I')
-
-AWS_SECRET_ACCESS_KEY = os.environ.get('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')
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'n9Xe6sA8ez5WpHcK9Qb9u4VJcwK6BNXZMBDCr/nS')
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+#AWS_SECRET_ACCESS_KEY = os.environ.get('n9Xe6sA8ez5WpHcK9Qb9u4VJcwK6BNXZMBDCr/nS')
 AWS_STORAGE_BUCKET_NAME = 'hihihihu'
-
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 
