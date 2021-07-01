@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<h1>Update Your Blog</h1><!--edit은 new랑 달리 정보를 받아오는 특징이 있음 value를 봐바ㅋ -->
+
+<form action="{%url 'update' blog.id %}" method="post"> <!--post는 get과 달리 보안이 있음/action을 안넣어주면 submit을 해도 아무런 진행이 안됨-->
+    {%csrf_token%}
+    <p>제목: <input type="text" name="title" value="{{blog.title}}"></p>
+    <p>작성자: <input type="text" name="writer" value="{{blog.writer}}"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10">{{blog.body}}</textarea>
+    <button type="submit">submit</button>
+
+</form>
+
+
+{% endblock %}

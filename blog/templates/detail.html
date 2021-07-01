@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block content%}
+    <h1>{{blog.title}}</h1>
+    <div>
+    작성자: {{blog.writer}}
+    <br>
+    날짜: {{blog.pub_date}}
+    </div>
+    <hr>
+    {% if blog.image %}
+    <p><img src="{{blog.image.url}}" alt=""></p> 
+    {% endif %}
+    <p>{{blog.body}}</p>
+    <a href="{% url 'edit' blog.id %}"> 수정하기 </a> <!--url다음에 네임스페이스 이름으로 넣기 그리고 blog.id 꼭 넣어주기(이게 매개변수를 건내주는 pathconverter랑 이어지거덩)-->
+    <br>
+    <a href="{% url 'delete' blog.id %}">삭제하기</a>
+
+{% endblock %}
